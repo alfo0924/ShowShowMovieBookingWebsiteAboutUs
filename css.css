@@ -1,0 +1,160 @@
+body{
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.87);
+    color: #090909;
+    padding: 50px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    color: inherit; /* 保持 footer 文字颜色与父元素一致 */
+}
+
+.bg-red {
+    background-color: #f60000;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+/* Added class for white text */
+.text-white {
+    color: white !important;
+}
+
+/* 在滑鼠懸停在導覽列按鈕上時產生白光效果 */
+
+
+.dark-mode
+{
+    /*display: none;*/
+    background: #090909;
+    color: #f5f5f5;
+}
+.dark-mode footer
+{
+    /*display: none;*/
+    background: #090909;
+    color: #f5f5f5;
+}
+.vintage-mode
+{
+    background: #efefa8;
+}
+.vintage-mode footer
+{
+    background: #efefa8;
+    color:#090909;
+    font-weight: 700;
+}
+.imgbg
+{
+    background: url('img/webp/webp001.webp') ;
+    background-size: 100%;
+
+}
+.imgbg .footer
+{
+    color:rgba(17,17,17); !important;
+}
+.navbar-toggler:hover {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
+}
+
+/*movie booking system*/
+
+.container {
+
+    background: rgba(252, 252, 252, 0.13);
+    margin: 300px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+select, button {
+
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.screen {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.seats {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.seat {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    background-color: #e0e0e0;
+    border: 1px solid #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.seat.selected {
+    background-color: #f00;
+}
+
+.seat.randomly-selected {
+    background-color: #707070;
+}
+
+.aisle {
+    visibility: hidden;
+}
+
+
+
+.aisle {
+    visibility: hidden;
+}
+
+.payment-options {
+    display: none;
+}
+
+.qr-code {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+
+

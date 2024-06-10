@@ -9,46 +9,41 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <style>
-        .footer {
-            background-color: rgba(239, 239, 239, 0.73);
-            color: #090909;
-            padding: 50px;
-            text-align: center;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer p {
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="css.css">
 </head>
-<body>
-<nav class="navbar navbar-light bg-light justify-content-end">
+<body >
+<nav class="navbar navbar-light justify-content-end" id="navbar">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
 </nav>
-
 <div class="collapse navbar-collapse justify-content-end" id="navbarToggleExternalContent" data-bs-theme="light">
-    <div class="bg-light p-4">
-        <h5 class="text-body-emphasis h4">SHOWSHOW電影訂票網</h5>
-        <span class="text-body-secondary"></span>
+    <div class=" p-4" id="navbarContent">
+        <h5 class="text-body-emphasis h4" id="navbarTitle">SHOWSHOW電影訂票網</h5>
+        <span class="text-body-secondary" id="rgbText">RGB</span>
+        <span onclick="dm()"> | <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
+            <defs>
+            </defs>
+            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                <circle cx="45" cy="45" r="45" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+            </g>
+        </svg> | </span>
+
+        <span onclick="vintage()"><img width="20" height="20" src="https://img.icons8.com/material-outlined/24/FAB005/filled-circle--v1.png" alt="filled-circle--v1"/>| </span>
+        <span onclick="imagebackground()"> <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/image.png" alt="image"/> | </span>
+
         <!-- 新增連結欄位 -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">首頁</a>
+                <a class="nav-link" href="https://thankful-water-06b9d691e.5.azurestaticapps.net/">首頁</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">電影</a>
+                <a class="nav-link" href="https://blue-bush-0c591b21e.5.azurestaticapps.net/">電影</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">訂票</a>
+                <a class="nav-link" href="https://thankful-water-06b9d691e.5.azurestaticapps.net/">訂票</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">關於我們</a>
@@ -59,10 +54,87 @@
 
 
 
-<footer class="footer">
+
+
+<div class="container">
+    <h1>電影訂票介面 </h1>
+
+    <form id="bookingForm">
+        <label for="movie">選擇電影 :</label>
+        <select id="movie" name="movie">
+            <option value="movie1">絕地戰警：生死與共</option>
+            <option value="movie2">芙莉歐莎：瘋狂麥斯傳奇篇章</option>
+            <option value="movie3">怒火狂猴</option>
+        </select>
+
+        <label for="time">選擇時間 :</label>
+        <select id="time" name="time">
+            <option value="time1">上午 10:00 </option>
+            <option value="time2">下午 2:00 </option>
+            <option value="time3">下午 4:00 </option>
+        </select>
+
+        <label for="combo">加購套餐 (飲料+爆米花)?</label>
+        <select id="combo" name="combo">
+            <option value="no">沒有套餐 </option>
+            <option value="drinks">飲料*1 </option>
+            <option value="popcorn">爆米花*1</option>
+            <option value="hotdog">熱狗*1</option>
+            <option value="churros">吉拿棒*1</option>
+            <option value="small">1號小套餐 (飲料*1, 爆米花*1)</option>
+            <option value="small2">2號小套餐 (飲料*1, 熱狗*1)</option>
+            <option value="small3">3號小套餐 (飲料*1, 吉拿棒*1)</option>
+            <option value="large">1號大套餐 (飲料*2, 爆米花*2)</option>
+            <option value="large2">2號大套餐 (飲料*2, 熱狗*2)</option>
+            <option value="large3">3號大套餐 (飲料*2, 吉拿棒*2)</option>
+        </select>
+
+
+
+
+        <div class="screen"><h2>螢幕</h2></div>
+        <div class="seats">
+            <h2>座位</h2>
+            <!-- Seats will be dynamically generated here -->
+        </div>
+
+        <button type="submit">預訂</button>
+        <button type="button" id="clearButton">清除選項</button> <!-- Added Clear Selection button -->
+        <button type="button" id="paymentButton">付款</button> <!-- Added Payment button -->
+    </form>
+
+    <div id="bookingInfo"></div>
+
+    <!-- Added QR Code -->
+    <div class="qr-code" id="qrCode">
+        <!-- QR Code display will be added here -->
+        <img src="img/webp/qrcodeo.webp" style="height: 400px; width: 400px" alt="QR Code">
+        <div id="countdownTimer"></div>
+        <button type="button" id="cancelButton" class="visible">取消</button>
+    </div>
+
+</div>
+
+
+
+
+</div>
+
+<button type="submit">預訂</button>
+<button type="button" id="clearButton">清除選項</button> <!-- Added Clear Selection button -->
+</form>
+
+<div id="bookingInfo"></div>
+</div>
+
+
+
+<footer   class="footer" class="dark-mode"  class="vintage-mode";  id="footer" >
     <p>© 2024 SWHOSHOW Movie Booking. All rights reserved.<span>&trade;</span></p>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+<script src="js.js"defer></script>
+
 </body>
 </html>
