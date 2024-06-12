@@ -1,11 +1,10 @@
-
-var colors = ['#f60000', 'blue', 'green', '#ffffff','#090909','#efefa8'];
+var colors = ['#f60000', 'blue', 'green', '#ffffff', '#090909', '#efefa8'];
 var currentIndex = 0;
 var rgbText = document.getElementById('rgbText');
-var navbar = document.getElementById('navbar');
-var navbarContent = document.getElementById('navbarContent');
+var navbar = document.querySelector('.navbar');
+var navbarContent = document.querySelector('.offcanvas-body');
 var footer = document.getElementById('footer');
-var navbarTitle = document.getElementById('navbarTitle');
+var navbarTitle = document.querySelector('.offcanvas-title');
 
 rgbText.addEventListener('click', function () {
     // 移除旧的文字颜色类
@@ -23,19 +22,19 @@ rgbText.addEventListener('click', function () {
     // 根据颜色选择设置不同的字体颜色
     if (colors[currentIndex] === '#ffffff') {
         document.body.style.color = 'black'; // 如果颜色是白色，则设置 body 文字颜色为黑色
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
-            item.classList.add('text-black'); // 添加白色文字的 class
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
+            item.classList.add('text-black'); // 添加黑色文字的 class
         });
     }
     else if (colors[currentIndex] === '#efefa8') {
         document.body.style.color = '#efefa8'; //
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
-            item.classList.add('text-black'); // 添加白色文字的 class
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
+            item.classList.add('text-black'); // 添加黑色文字的 class
         });
     }
     else {
         document.body.style.color = 'white'; // 设置 body 文字颜色为白色
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
             item.classList.add('text-white'); // 添加白色文字的 class
         });
     }
@@ -46,21 +45,20 @@ rgbText.addEventListener('click', function () {
 
 function dm() {
     var element = document.body;
-    var navbar = document.getElementById('navbar');
+    var navbar = document.querySelector('.navbar');
     var footer = document.getElementById('footer');
 
     element.classList.toggle("dark-mode");
     navbar.classList.toggle("navbar-light");
 
-
     if (element.classList.contains("dark-mode")) {
         document.body.style.color = 'white'; // 设置 body 文字颜色为白色
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
             item.classList.add('text-white'); // 添加白色文字的 class
         });
     } else {
         document.body.style.color = 'black'; // 设置 body 文字颜色为黑色
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
             item.classList.remove('text-white'); // 移除白色文字的 class
         });
     }
@@ -68,19 +66,19 @@ function dm() {
 
 function vintage() {
     var element = document.body;
-    var navbar = document.getElementById('navbar');
+    var navbar = document.querySelector('.navbar');
     var footer = document.getElementById('footer');
 
     element.classList.toggle("vintage-mode");
     navbar.classList.toggle("navbar-light");
     if (element.classList.contains("vintage-mode")) {
         document.body.style.color = 'black'; // 设置 body 文字颜色为白色
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
             item.classList.add('text-black'); // 添加白色文字的 class
         });
     } else {
         document.body.style.color = 'black'; // 设置 body 文字颜色为黑色
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
             item.classList.remove('text-white'); // 移除白色文字的 class
         });
     }
@@ -92,7 +90,7 @@ function imagebackground() {
     if (element.classList.contains("imgbg")) {
         document.body.style.color = 'white'; // 设置 body 文字颜色为白色
 
-        document.querySelectorAll('.navbar-nav .nav-link, #navbarTitle, #rgbText').forEach(function (item) {
+        document.querySelectorAll('.navbar-nav .nav-link, .offcanvas-title, #rgbText').forEach(function (item) {
             item.classList.add('text-white'); // 添加白色文字的 class
 
             document.querySelectorAll('.footer p').forEach(function (item) {
@@ -102,7 +100,7 @@ function imagebackground() {
     } else {
         document.body.style.color = 'black'; // 设置 body 文字颜色为黑色
         document.body.style.background = ''; // 移除背景图像
-        document.querySelectorAll('.navbar-nav .nav-link, .footer p, #navbarTitle, #rgbText').forEach(function (item) {
+        document.querySelectorAll('.navbar-nav .nav-link, .footer p, .offcanvas-title, #rgbText').forEach(function (item) {
             item.classList.remove('text-white'); // 移除白色文字的 class
         });
     }
@@ -111,6 +109,7 @@ function imagebackground() {
 
 
 //booking system
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("bookingForm");
     const bookingInfo = document.getElementById("bookingInfo");
@@ -357,23 +356,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-
-    // 当选择电影或时间更改时更新座位表
-    const timeSelect = document.getElementById("time");
-
-    movieSelect.addEventListener("change", updateSeats);
-    timeSelect.addEventListener("change", updateSeats);
-
-    function updateSeats() {
-        const seatsContainer = document.querySelector(".seats");
-        // 清空现有座位表
-        seatsContainer.innerHTML = "";
-
-        // 重新生成座位表
-        generateSeats();
-        randomSeatSelection();
-    }
-
     // Cancel button functionality
     cancelButton.addEventListener("click", function() {
         const bookingForm = document.getElementById("bookingForm");
@@ -389,5 +371,82 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-//
 
+//content function
+
+// 獲取需要操作的元素
+
+
+var carousel = document.querySelector('#carouselExampleAutoplaying');
+
+var web1Image = document.querySelector('#web1Image');
+var web2Image = document.querySelector('#web2Image');
+var web3Image = document.querySelector('#web3Image');
+
+
+var web1Content = document.querySelector('#web1Content');
+var web2Content = document.querySelector('#web2Content');
+var web3Content = document.querySelector('#web3Content');
+
+var backButton1 = document.querySelector('#backButton1');
+var backButton2 = document.querySelector('#backButton2');
+var backButton3 = document.querySelector('#backButton3');
+
+// 監聽圖片點擊事件
+web1Image.addEventListener('click', function() {
+    // 隱藏自動輪播圖
+    carousel.style.display = 'none';
+    // 顯示web1的內容
+    web1Content.style.display = 'block';
+});
+web2Image.addEventListener('click', function() {
+    // 隱藏自動輪播圖
+    carousel.style.display = 'none';
+    // 顯示web2的內容
+    web2Content.style.display = 'block';
+});
+web3Image.addEventListener('click', function() {
+    // 隱藏自動輪播圖
+    carousel.style.display = 'none';
+    // 顯示web3的內容
+    web3Content.style.display = 'block';
+});
+
+// 監聽返回按鈕點擊事件
+backButton1.addEventListener('click', function() {
+    // 隱藏web1的內容
+    web1Content.style.display = 'none';
+    // 顯示自動輪播圖
+    carousel.style.display = 'block';
+});
+// 監聽返回按鈕點擊事件
+backButton2.addEventListener('click', function() {
+    // 隱藏web1的內容
+    web2Content.style.display = 'none';
+    // 顯示自動輪播圖
+    carousel.style.display = 'block';
+});
+// 監聽返回按鈕點擊事件
+backButton3.addEventListener('click', function() {
+    // 隱藏web1的內容
+    web3Content.style.display = 'none';
+    // 顯示自動輪播圖
+    carousel.style.display = 'block';
+});
+
+
+
+// // 監聽返回按鈕點擊事件
+// backButton.addEventListener('click', function() {
+//     // 隱藏web2的內容
+//     web2Content.style.display = 'none';
+//     // 顯示自動輪播圖
+//     carousel.style.display = 'block';
+// });
+// // 監聽返回按鈕點擊事件
+// backButton.addEventListener('click', function() {
+//     // 隱藏web3的內容
+//     web3Content.style.display = 'none';
+//     // 顯示自動輪播圖
+//     carousel.style.display = 'block';
+// });
