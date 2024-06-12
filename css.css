@@ -155,6 +155,23 @@ select, button {
     display: block;
 }
 
+.navbar
+{
+    background: rgba(255, 255, 255, 0.66);
+
+}
+/*.navbar a:hover*/
+/*{*/
+/*    color: #000000;*/
+/*    cursor: pointer;*/
+/*    text-shadow: 5px 2px 5px #bdbdbd;*/
+/*}*/
+.offcanvas
+{
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
 
 
 
